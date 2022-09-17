@@ -1,0 +1,11 @@
+{
+  "quevedo_bzrp": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "maytokverso:quevedo",
+        "stream": true
+      }
+    ]
+  }
+}
