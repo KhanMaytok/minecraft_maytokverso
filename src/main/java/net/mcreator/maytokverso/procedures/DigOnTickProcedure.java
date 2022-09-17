@@ -50,13 +50,13 @@ public class DigOnTickProcedure {
 		if ((world.getBlockState(new BlockPos(x, y - level, z))).getBlock() == Blocks.BEDROCK) {
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
-						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "//pos1 " + (x+20)  + "," + y + "," + (z+20));
+						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "/pos1 " + (x+20)  + "," + y + "," + (z+20));
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
-						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "//pos1 " + (x-20)  + "," + 0 + "," + (z-20));
+						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "/pos1 " + (x-20)  + "," + 0 + "," + (z-20));
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
-						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "//replace barrier air");
+						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "/replace barrier air");
 			{
 				BlockPos _pos = new BlockPos(x, y, z);
 				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y + 1, z), null);
