@@ -12,12 +12,12 @@ public class PlaceDigFloorProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "/pos1");
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "//pos1 " + (x+20)  + "," + y + "," + (z+20));
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "/pos2");
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "//pos1 " + (x-20)  + "," + 0 + "," + (z-20));
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "/set glass");
+					new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "//set glass");
 	}
 }
