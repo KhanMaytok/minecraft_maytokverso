@@ -27,16 +27,16 @@ import net.mcreator.maytokverso.init.MaytokversoModBlocks;
 import java.util.Set;
 import java.util.List;
 
-public class DiggerFluidFeature extends LakeFeature {
-	public static DiggerFluidFeature FEATURE = null;
+public class DigFluidFeature extends LakeFeature {
+	public static DigFluidFeature FEATURE = null;
 	public static Holder<ConfiguredFeature<LakeFeature.Configuration, ?>> CONFIGURED_FEATURE = null;
 	public static Holder<PlacedFeature> PLACED_FEATURE = null;
 
 	public static Feature<?> feature() {
-		FEATURE = new DiggerFluidFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("maytokverso:digger_fluid", FEATURE, new LakeFeature.Configuration(
-				BlockStateProvider.simple(MaytokversoModBlocks.DIGGER_FLUID.get()), BlockStateProvider.simple(Blocks.AIR)));
-		PLACED_FEATURE = PlacementUtils.register("maytokverso:digger_fluid", CONFIGURED_FEATURE,
+		FEATURE = new DigFluidFeature();
+		CONFIGURED_FEATURE = FeatureUtils.register("maytokverso:dig_fluid", FEATURE, new LakeFeature.Configuration(
+				BlockStateProvider.simple(MaytokversoModBlocks.DIG_FLUID.get()), BlockStateProvider.simple(Blocks.AIR)));
+		PLACED_FEATURE = PlacementUtils.register("maytokverso:dig_fluid", CONFIGURED_FEATURE,
 				List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
 						EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.not(BlockPredicate.ONLY_IN_AIR_PREDICATE), 32),
 						BiomeFilter.biome()));
@@ -50,7 +50,7 @@ public class DiggerFluidFeature extends LakeFeature {
 	public static final Set<ResourceLocation> GENERATE_BIOMES = null;
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(Level.OVERWORLD);
 
-	public DiggerFluidFeature() {
+	public DigFluidFeature() {
 		super(LakeFeature.Configuration.CODEC);
 	}
 

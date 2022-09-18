@@ -1,12 +1,12 @@
 {
-  "block.maytokverso.digger_fluid": "Digger fluid",
   "item.maytokverso.invisible_armor_helmet": "Invisible Armor Helmet",
+  "block.maytokverso.mk_digger": "Maytok Digger",
+  "item.maytokverso.dig_fluid_bucket": "Dig Fluid Bucket",
+  "item.maytokverso.invisible_armor_leggings": "Invisible Armor Leggings",
+  "fluid.maytokverso.dig_fluid": "Dig Fluid",
+  "block.maytokverso.dig_fluid": "Dig Fluid",
   "item.maytokverso.mk_telephone": "Mk Telephone",
   "item.maytokverso.invisible_armor_chestplate": "Invisible Armor Body",
   "subtitles.quevedo_bzrp": "",
-  "item.maytokverso.invisible_armor_boots": "Invisible Armor Boots",
-  "block.maytokverso.mk_digger": "Maytok Digger",
-  "item.maytokverso.invisible_armor_leggings": "Invisible Armor Leggings",
-  "item.maytokverso.digger_fluid_bucket": "Mk Slime Fluid Bucket",
-  "fluid.maytokverso.digger_fluid": "Digger fluid"
+  "item.maytokverso.invisible_armor_boots": "Invisible Armor Boots"
 }

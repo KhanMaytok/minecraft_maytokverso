@@ -17,7 +17,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.Holder;
 
-import net.mcreator.maytokverso.world.features.lakes.DiggerFluidFeature;
+import net.mcreator.maytokverso.world.features.lakes.DigFluidFeature;
 import net.mcreator.maytokverso.MaytokversoMod;
 
 import java.util.function.Supplier;
@@ -29,8 +29,8 @@ import java.util.ArrayList;
 public class MaytokversoModFeatures {
 	public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.FEATURES, MaytokversoMod.MODID);
 	private static final List<FeatureRegistration> FEATURE_REGISTRATIONS = new ArrayList<>();
-	public static final RegistryObject<Feature<?>> DIGGER_FLUID = register("digger_fluid", DiggerFluidFeature::feature,
-			new FeatureRegistration(GenerationStep.Decoration.LAKES, DiggerFluidFeature.GENERATE_BIOMES, DiggerFluidFeature::placedFeature));
+	public static final RegistryObject<Feature<?>> DIG_FLUID = register("dig_fluid", DigFluidFeature::feature,
+			new FeatureRegistration(GenerationStep.Decoration.LAKES, DigFluidFeature.GENERATE_BIOMES, DigFluidFeature::placedFeature));
 
 	private static RegistryObject<Feature<?>> register(String registryname, Supplier<Feature<?>> feature, FeatureRegistration featureRegistration) {
 		FEATURE_REGISTRATIONS.add(featureRegistration);

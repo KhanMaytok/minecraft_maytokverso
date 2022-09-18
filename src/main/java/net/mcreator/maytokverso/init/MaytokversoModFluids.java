@@ -16,20 +16,20 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import net.mcreator.maytokverso.fluid.DiggerFluidFluid;
+import net.mcreator.maytokverso.fluid.DigFluidFluid;
 import net.mcreator.maytokverso.MaytokversoMod;
 
 public class MaytokversoModFluids {
 	public static final DeferredRegister<Fluid> REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, MaytokversoMod.MODID);
-	public static final RegistryObject<Fluid> DIGGER_FLUID = REGISTRY.register("digger_fluid", () -> new DiggerFluidFluid.Source());
-	public static final RegistryObject<Fluid> FLOWING_DIGGER_FLUID = REGISTRY.register("flowing_digger_fluid", () -> new DiggerFluidFluid.Flowing());
+	public static final RegistryObject<Fluid> DIG_FLUID = REGISTRY.register("dig_fluid", () -> new DigFluidFluid.Source());
+	public static final RegistryObject<Fluid> FLOWING_DIG_FLUID = REGISTRY.register("flowing_dig_fluid", () -> new DigFluidFluid.Flowing());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
 		@SubscribeEvent
 		public static void clientSetup(FMLClientSetupEvent event) {
-			ItemBlockRenderTypes.setRenderLayer(DIGGER_FLUID.get(), renderType -> renderType == RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(FLOWING_DIGGER_FLUID.get(), renderType -> renderType == RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DIG_FLUID.get(), renderType -> renderType == RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(FLOWING_DIG_FLUID.get(), renderType -> renderType == RenderType.translucent());
 		}
 	}
 }

@@ -8,9 +8,9 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 import net.mcreator.maytokverso.init.MaytokversoModFluids;
 
-public class DiggerFluidBlock extends LiquidBlock {
-	public DiggerFluidBlock() {
-		super(() -> (FlowingFluid) MaytokversoModFluids.DIGGER_FLUID.get(), BlockBehaviour.Properties.of(Material.WATER).strength(100f)
+public class DigFluidBlock extends LiquidBlock {
+	public DigFluidBlock() {
+		super(() -> (FlowingFluid) MaytokversoModFluids.DIG_FLUID.get(), BlockBehaviour.Properties.of(Material.LAVA).strength(100f)
 
 		);
 	}

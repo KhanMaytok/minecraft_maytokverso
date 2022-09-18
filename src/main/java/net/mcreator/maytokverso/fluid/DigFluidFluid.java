@@ -8,25 +8,29 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.resources.ResourceLocation;
 
+import net.mcreator.maytokverso.init.MaytokversoModItems;
 import net.mcreator.maytokverso.init.MaytokversoModFluids;
 import net.mcreator.maytokverso.init.MaytokversoModBlocks;
 
-public abstract class DiggerFluidFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(MaytokversoModFluids.DIGGER_FLUID,
-			MaytokversoModFluids.FLOWING_DIGGER_FLUID, FluidAttributes.builder(new ResourceLocation("maytokverso:blocks/mkdiggerfluid"),
-					new ResourceLocation("maytokverso:blocks/mkdiggerfluid"))
+public abstract class DigFluidFluid extends ForgeFlowingFluid {
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(MaytokversoModFluids.DIG_FLUID,
+			MaytokversoModFluids.FLOWING_DIG_FLUID,
+			FluidAttributes.builder(new ResourceLocation("maytokverso:blocks/lava_still"), new ResourceLocation("maytokverso:blocks/lava_flow"))
+					.luminosity(15)
 
-	).explosionResistance(100f).canMultiply()
+					.rarity(Rarity.RARE))
+			.explosionResistance(100f).canMultiply()
 
-			.block(() -> (LiquidBlock) MaytokversoModBlocks.DIGGER_FLUID.get());
+			.bucket(MaytokversoModItems.DIG_FLUID_BUCKET).block(() -> (LiquidBlock) MaytokversoModBlocks.DIG_FLUID.get());
 
-	private DiggerFluidFluid() {
+	private DigFluidFluid() {
 		super(PROPERTIES);
 	}
 
-	public static class Source extends DiggerFluidFluid {
+	public static class Source extends DigFluidFluid {
 		public Source() {
 			super();
 		}
@@ -40,7 +44,7 @@ public abstract class DiggerFluidFluid extends ForgeFlowingFluid {
 		}
 	}
 
-	public static class Flowing extends DiggerFluidFluid {
+	public static class Flowing extends DigFluidFluid {
 		public Flowing() {
 			super();
 		}
