@@ -27,6 +27,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.maytokverso.init.MaytokversoModItems;
+import net.mcreator.maytokverso.init.MaytokversoModFluids;
+import net.mcreator.maytokverso.init.MaytokversoModFeatures;
 import net.mcreator.maytokverso.init.MaytokversoModBlocks;
 
 import java.util.function.Supplier;
@@ -47,6 +49,9 @@ public class MaytokversoMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		MaytokversoModBlocks.REGISTRY.register(bus);
 		MaytokversoModItems.REGISTRY.register(bus);
+
+		MaytokversoModFeatures.REGISTRY.register(bus);
+		MaytokversoModFluids.REGISTRY.register(bus);
 
 	}
 
