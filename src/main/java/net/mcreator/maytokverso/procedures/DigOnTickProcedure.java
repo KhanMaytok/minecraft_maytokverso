@@ -20,13 +20,11 @@ import net.minecraft.Util;
 
 public class DigOnTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		double bufferLevel = 0;
 		double encontreRompible = 0;
 		double level = 0;
 		double sx = 0;
 		double sz = 0;
 		level = 2;
-		bufferLevel = 2;
 		encontreRompible = 0;
 		while (encontreRompible == 0) {
 			if ((world.getBlockState(new BlockPos(x, y - level, z))).getBlock() == Blocks.BARRIER) {
@@ -54,16 +52,19 @@ public class DigOnTickProcedure {
 		}
 		if ((world.getBlockState(new BlockPos(x, y - level, z))).getBlock() == Blocks.BEDROCK) {
 
-			String command = "fill " + (int)(x+10) + " " + (int)(y-2) + " " + (int)(z+10) + " " + (int)(x-10) + " -64 " + (int)(z-10) + " barrier replace water";
+			for(int a=(int)y; a>=(int)(y-level); a--) {
+				String command = "fill " + (int)(x+10) + " " + (int)(a) + " " + (int)(z+10) + " " + (int)(x-10) + " " + (int)(a) + " " + (int)(z-10) + " air replace barrier";
 
-			if (world instanceof ServerLevel _level)
+				if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
 						"", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), command);
-			if (!world.isClientSide()) {
-				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-				if (_mcserv != null)
-					_mcserv.getPlayerList().broadcastMessage(new TextComponent(command), ChatType.SYSTEM, Util.NIL_UUID);
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent(command), ChatType.SYSTEM, Util.NIL_UUID);
+				}
 			}
+			
 			{
 				BlockPos _pos = new BlockPos(x, y, z);
 				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y + 1, z), null);

@@ -23,7 +23,7 @@ import java.util.Collections;
 
 public class MKDiggerBlock extends Block {
 	public MKDiggerBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GRAVEL).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.ANVIL).strength(1f, 10f));
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class MKDiggerBlock extends Block {
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.scheduleTick(pos, this, 40);
+		world.scheduleTick(pos, this, 20);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class MKDiggerBlock extends Block {
 		int z = pos.getZ();
 
 		DigOnTickProcedure.execute(world, x, y, z);
-		world.scheduleTick(pos, this, 40);
+		world.scheduleTick(pos, this, 20);
 	}
 
 	@Override
