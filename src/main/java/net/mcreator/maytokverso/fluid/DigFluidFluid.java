@@ -18,7 +18,7 @@ import net.mcreator.maytokverso.init.MaytokversoModBlocks;
 public abstract class DigFluidFluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(MaytokversoModFluids.DIG_FLUID,
 			MaytokversoModFluids.FLOWING_DIG_FLUID,
-			FluidAttributes.builder(new ResourceLocation("maytokverso:blocks/lava_still"), new ResourceLocation("maytokverso:blocks/lava_flow"))
+			FluidAttributes.builder(new ResourceLocation("maytokverso:blocks/dig_still"), new ResourceLocation("maytokverso:blocks/dig_flow"))
 					.luminosity(15)
 
 					.rarity(Rarity.RARE))

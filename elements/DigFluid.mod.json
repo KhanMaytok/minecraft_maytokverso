@@ -4,8 +4,8 @@
   "definition": {
     "name": "Dig Fluid",
     "bucketName": "Dig Fluid Bucket",
-    "textureStill": "lava_still",
-    "textureFlowing": "lava_flow",
+    "textureStill": "dig_still",
+    "textureFlowing": "dig_flow",
     "tintType": "No tint",
     "canMultiply": true,
     "flowRate": 5,
@@ -33,7 +33,7 @@
     "rarity": "RARE",
     "specialInfo": [],
     "resistance": 100.0,
-    "luminance": 0,
+    "luminance": 15,
     "lightOpacity": 1,
     "emissiveRendering": false,
     "tickRate": 10,
@@ -41,9 +41,7 @@
     "fireSpreadSpeed": 0,
     "colorOnMap": "DEFAULT",
     "frequencyOnChunks": 5,
-    "spawnWorldTypes": [
-      "Surface"
-    ],
+    "spawnWorldTypes": [],
     "restrictionBiomes": []
   }
 }

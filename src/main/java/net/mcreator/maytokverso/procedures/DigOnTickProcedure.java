@@ -53,7 +53,7 @@ public class DigOnTickProcedure {
 		if ((world.getBlockState(new BlockPos(x, y - level, z))).getBlock() == Blocks.BEDROCK) {
 
 			for(int a=(int)y; a>=(int)(y-level); a--) {
-				String command = "fill " + (int)(x+10) + " " + (int)(a) + " " + (int)(z+10) + " " + (int)(x-10) + " " + (int)(a) + " " + (int)(z-10) + " maytokverso:digger_fluid replace barrier";
+				String command = "fill " + (int)(x+10) + " " + (int)(a) + " " + (int)(z+10) + " " + (int)(x-10) + " " + (int)(a) + " " + (int)(z-10) + " maytokverso:dig_fluid replace barrier";
 
 				if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,

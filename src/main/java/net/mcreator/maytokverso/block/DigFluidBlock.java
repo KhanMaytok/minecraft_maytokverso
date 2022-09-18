@@ -1,6 +1,8 @@
 
 package net.mcreator.maytokverso.block;
 
+import org.checkerframework.checker.units.qual.s;
+
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -12,6 +14,6 @@ public class DigFluidBlock extends LiquidBlock {
 	public DigFluidBlock() {
 		super(() -> (FlowingFluid) MaytokversoModFluids.DIG_FLUID.get(), BlockBehaviour.Properties.of(Material.LAVA).strength(100f)
 
-		);
+				.lightLevel(s -> 15));
 	}
 }
