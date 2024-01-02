@@ -16,7 +16,7 @@ import net.minecraft.Util;
 public class PlaceDigFloorProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 
-		String command = "fill " + (int)(x+10) + " " + (int)(y-1) + " " + (int)(z+10) + " " + (int)(x-10) + " " + (int)(y-1) + " " + (int)(z-10) + " minecraft:glass";
+		String command = "fill " + (int)(x+10) + " " + (int)(y-1) + " " + (int)(z+10) + " " + (int)(x-10) + " " + (int)(y-1) + " " + (int)(z-10) + " minecraft:blue_stained_glass";
 
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
