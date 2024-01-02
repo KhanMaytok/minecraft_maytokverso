@@ -33,10 +33,10 @@ public class DigOnTickProcedure {
 				encontreRompible = 1;
 			}
 		}
-		sz = -8;
-		for (int index1 = 0; index1 < (int) (16); index1++) {
-			sx = -8;
-			for (int index2 = 0; index2 < (int) (16); index2++) {
+		sz = -16;
+		for (int index1 = 0; index1 < (int) (32); index1++) {
+			sx = -16;
+			for (int index2 = 0; index2 < (int) (32); index2++) {
 				if (!(world.getBlockState(new BlockPos(x + sx, y - level, z + sz)))
 						.is(BlockTags.create(new ResourceLocation("minecraft:wither_immune")))) {
 					{
@@ -53,7 +53,7 @@ public class DigOnTickProcedure {
 		if ((world.getBlockState(new BlockPos(x, y - level, z))).getBlock() == Blocks.BEDROCK) {
 
 			for(int a=(int)y; a>=(int)(y-level); a--) {
-				String command = "fill " + (int)(x+10) + " " + (int)(a) + " " + (int)(z+10) + " " + (int)(x-10) + " " + (int)(a) + " " + (int)(z-10) + " maytokverso:dig_fluid replace barrier";
+				String command = "fill " + (int)(x+20) + " " + (int)(a) + " " + (int)(z+20) + " " + (int)(x-20) + " " + (int)(a) + " " + (int)(z-20) + " maytokverso:dig_fluid replace barrier";
 
 				if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4,
@@ -65,6 +65,7 @@ public class DigOnTickProcedure {
 				}
 			}
 			
+			// Destroy the digger
 			{
 				BlockPos _pos = new BlockPos(x, y, z);
 				Block.dropResources(world.getBlockState(_pos), world, new BlockPos(x, y + 1, z), null);
