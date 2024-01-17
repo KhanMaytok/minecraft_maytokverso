@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "maytokverso:blocks/dig_flow",
+    "up": "maytokverso:blocks/mkdiggertexturetop",
+    "north": "maytokverso:blocks/dig_still",
+    "east": "maytokverso:blocks/dig_flow",
+    "south": "maytokverso:blocks/dig_flow",
+    "west": "maytokverso:blocks/dig_flow",
+    "particle": "maytokverso:blocks/dig_flow"
+  }
+}

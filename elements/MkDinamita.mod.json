@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "cellphone",
     "customModelName": "Normal",
-    "name": "Mk Telephone",
+    "name": "Mk Dinamita",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "MISC"
@@ -30,7 +30,7 @@
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "onRightClickedInAir": {
-      "name": "GoToPapaCalo"
+      "name": "PlaceDinamita"
     },
     "isFood": false,
     "nutritionalValue": 4,

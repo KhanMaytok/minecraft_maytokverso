@@ -2,12 +2,12 @@
   "_fv": 39,
   "_type": "block",
   "definition": {
-    "texture": "geolyzer_side",
+    "texture": "dig_flow",
     "textureTop": "mkdiggertexturetop",
-    "textureLeft": "geolyzer_side",
-    "textureFront": "geolyzer_side",
-    "textureRight": "geolyzer_side",
-    "textureBack": "geolyzer_side",
+    "textureLeft": "dig_flow",
+    "textureFront": "dig_still",
+    "textureRight": "dig_flow",
+    "textureBack": "dig_flow",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -33,7 +33,7 @@
         "subtract": false
       }
     ],
-    "name": "Maytok Digger",
+    "name": "Maytok Destroyer",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
@@ -56,7 +56,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 20,
+    "tickRate": 1,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -118,7 +118,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "DigOnTick"
+      "name": "DestroyOnTick"
     },
     "onBlockPlayedBy": {
       "name": "PlaceDigFloor"

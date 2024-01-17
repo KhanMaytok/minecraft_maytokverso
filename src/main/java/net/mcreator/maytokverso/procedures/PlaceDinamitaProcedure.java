@@ -8,10 +8,9 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-public class GoToPapaCaloProcedure {
+public class PlaceDinamitaProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (world instanceof ServerLevel _level)
-			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-					"tp Diiiiiego CafecitoConMiel");
+			_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "fill ~ ~-10 ~ ~10 ~10 ~10");
 	}
 }

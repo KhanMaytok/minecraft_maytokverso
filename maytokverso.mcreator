@@ -11,7 +11,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/maytokverso/models/item/invisible_armor_helmet.json",
+          "src/main/resources/assets/maytokverso/models/item/invisible_armor_boots.json",
+          "src/main/java/net/mcreator/maytokverso/item/InvisibleArmorItem.java",
+          "src/main/resources/assets/maytokverso/models/item/invisible_armor_chestplate.json",
+          "src/main/resources/assets/maytokverso/models/item/invisible_armor_leggings.json"
+        ]
       }
     },
     {
@@ -20,7 +27,13 @@
       "sortid": 2,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "mk_telephone"
+      "registry_name": "mk_telephone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/maytokverso/item/MkTelephoneItem.java",
+          "src/main/resources/assets/maytokverso/models/item/mk_telephone.json"
+        ]
+      }
     },
     {
       "name": "GoToPapaCalo",
@@ -30,6 +43,9 @@
       "locked_code": false,
       "registry_name": "go_to_papa_calo",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/maytokverso/procedures/GoToPapaCaloProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -58,6 +74,9 @@
       "locked_code": false,
       "registry_name": "place_dig_floor",
       "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/maytokverso/procedures/PlaceDigFloorProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -84,7 +103,15 @@
       "sortid": 4,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "mk_digger"
+      "registry_name": "mk_digger",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/maytokverso/models/item/mk_digger.json",
+          "src/main/java/net/mcreator/maytokverso/block/MKDiggerBlock.java",
+          "src/main/resources/assets/maytokverso/models/block/mk_digger.json",
+          "src/main/resources/assets/maytokverso/blockstates/mk_digger.json"
+        ]
+      }
     },
     {
       "name": "DigOnTick",
@@ -93,6 +120,53 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "dig_on_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/maytokverso/procedures/DigOnTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MkDestroyer",
+      "type": "block",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mk_destroyer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/maytokverso/block/MkDestroyerBlock.java",
+          "src/main/resources/assets/maytokverso/blockstates/mk_destroyer.json",
+          "src/main/resources/assets/maytokverso/models/item/mk_destroyer.json",
+          "src/main/resources/assets/maytokverso/models/block/mk_destroyer.json"
+        ]
+      }
+    },
+    {
+      "name": "DestroyOnTick",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "destroy_on_tick",
       "metadata": {
         "dependencies": [
           {
@@ -115,14 +189,48 @@
       }
     },
     {
-      "name": "DigFluid",
-      "type": "fluid",
-      "sortid": 6,
+      "name": "MkDinamita",
+      "type": "item",
+      "sortid": 8,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "dig_fluid",
+      "registry_name": "mk_dinamita",
       "metadata": {
-        "gb": true
+        "files": [
+          "src/main/resources/assets/maytokverso/models/item/mk_dinamita.json",
+          "src/main/java/net/mcreator/maytokverso/item/MkDinamitaItem.java"
+        ]
+      }
+    },
+    {
+      "name": "PlaceDinamita",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "place_dinamita",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/maytokverso/procedures/PlaceDinamitaProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     }
   ],
@@ -141,14 +249,13 @@
     "en_us": {
       "item.maytokverso.invisible_armor_helmet": "Invisible Armor Helmet",
       "block.maytokverso.mk_digger": "Maytok Digger",
-      "item.maytokverso.dig_fluid_bucket": "Dig Fluid Bucket",
+      "item.maytokverso.mk_dinamita": "Mk Dinamita",
       "item.maytokverso.invisible_armor_leggings": "Invisible Armor Leggings",
-      "fluid.maytokverso.dig_fluid": "Dig Fluid",
-      "block.maytokverso.dig_fluid": "Dig Fluid",
       "item.maytokverso.mk_telephone": "Mk Telephone",
       "item.maytokverso.invisible_armor_chestplate": "Invisible Armor Body",
       "subtitles.quevedo_bzrp": "",
-      "item.maytokverso.invisible_armor_boots": "Invisible Armor Boots"
+      "item.maytokverso.invisible_armor_boots": "Invisible Armor Boots",
+      "block.maytokverso.mk_destroyer": "Maytok Destroyer"
     }
   },
   "foldersRoot": {
@@ -172,5 +279,5 @@
     "modElementsPackage": "net.mcreator.maytokverso",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202300110610
 }

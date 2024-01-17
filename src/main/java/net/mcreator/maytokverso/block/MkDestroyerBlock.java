@@ -15,14 +15,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.maytokverso.procedures.PlaceDigFloorProcedure;
-import net.mcreator.maytokverso.procedures.DigOnTickProcedure;
+import net.mcreator.maytokverso.procedures.DestroyOnTickProcedure;
 
 import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
-public class MKDiggerBlock extends Block {
-	public MKDiggerBlock() {
+public class MkDestroyerBlock extends Block {
+	public MkDestroyerBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.ANVIL).strength(1f, 10f));
 	}
 
@@ -42,7 +42,7 @@ public class MKDiggerBlock extends Block {
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.scheduleTick(pos, this, 20);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override
@@ -51,8 +51,8 @@ public class MKDiggerBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		DigOnTickProcedure.execute(world, x, y, z);
-		world.scheduleTick(pos, this, 20);
+		DestroyOnTickProcedure.execute(world, x, y, z);
+		world.scheduleTick(pos, this, 1);
 	}
 
 	@Override
